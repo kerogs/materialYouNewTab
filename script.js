@@ -164,13 +164,13 @@ setInterval(() => {
     cumulativeMinuteRotation = initialMinutes * 6 + (initialSeconds / 60) * 6;
     cumulativeHourRotation += (1 / 120); // Add 1/120° for each second (30° / 3600s)
     // Apply new rotations
-    document.getElementById("second").style.transition = "transform 1s ease"; // Transition fluide
+    // document.getElementById("second").style.transition = "transform 1s ease"; // Transition fluide
     document.getElementById("second").style.transform = `rotate(${cumulativeSecondRotation}deg)`;
 
-    document.getElementById("minute").style.transition = "transform 1s ease"; // Transition fluide
+    // document.getElementById("minute").style.transition = "transform 1s ease"; // Transition fluide
     document.getElementById("minute").style.transform = `rotate(${cumulativeMinuteRotation}deg)`;
 
-    document.getElementById("hour").style.transition = "transform 1s ease"; // Transition fluide
+    // document.getElementById("hour").style.transition = "transform 1s ease"; // Transition fluide
     document.getElementById("hour").style.transform = `rotate(${cumulativeHourRotation}deg)`;
 
     // done : 5:08* 14 August 2023pHar
@@ -202,6 +202,15 @@ setInterval(() => {
 }, 1000);
 
 
+window.addEventListener("focus", function() {
+    setTimeout(function() {
+        document.querySelector(".clock").classList.remove("stop");
+    }, 100); // 100ms de délai
+});
+
+window.addEventListener("blur", function() {
+    document.querySelector(".clock").classList.add("stop");
+});
 
 setInterval((updated)=>{
  const userTextDiv = document.getElementById("userText");

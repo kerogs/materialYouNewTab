@@ -274,6 +274,12 @@ body {
     border-radius: 100%;
 }
 
+.clock.stop #hour,
+.clock.stop #minute,
+.clock.stop #second {
+    transition: unset !important;
+}
+
 /* ---------------------- */
 .ttteexxtt {
     position: absolute;
