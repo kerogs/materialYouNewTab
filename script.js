@@ -203,13 +203,10 @@ setInterval(() => {
 
 
 window.addEventListener("focus", function() {
+    document.querySelector(".clock").classList.add("stop");
     setTimeout(function() {
         document.querySelector(".clock").classList.remove("stop");
-    }, 100); // 100ms de délai
-});
-
-window.addEventListener("blur", function() {
-    document.querySelector(".clock").classList.add("stop");
+    }, 100);
 });
 
 setInterval((updated)=>{
